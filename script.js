@@ -30,9 +30,9 @@ async function checkWeather(city){
     weather_body.style.display = "flex";
 
     temperature.innerHTML = `${Math.round(weather_data.main.temp - 273.15)}°C`; // Displaying Temperature
-    description.innerHTML = `${weather_data.weather[0].description}`; // Displaying Description
-    humidity.innerHTML = `${weather_data.main.humidity}%`; // Displaying Humidity
-    wind_speed.innerHTML = `${weather_data.wind.speed}Km/H`; // Displaying Wind_ Speed
+    description.innerHTML = `${weather_data.weather[0].description}`;           // Displaying Description
+    humidity.innerHTML = `${weather_data.main.humidity}%`;                      // Displaying Humidity
+    wind_speed.innerHTML = `${weather_data.wind.speed}Km/H`;                    // Displaying Wind Speed
 
     // Checking the weather condition
     switch(weather_data.weather[0].main){

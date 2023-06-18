@@ -12,7 +12,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #363638;
+    background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 }
 
 .container{
@@ -60,7 +61,7 @@ body{
 }
 
 .weather-body{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -80,12 +81,6 @@ body{
     font-size: 40px;
     font-weight: 800;
     position: relative;
-}
-
-.weather-box .temperature sup{
-    font-size: 20px;
-    position: absolute;
-    font-weight: 600;
 }
 
 .weather-box .description{
@@ -116,6 +111,7 @@ body{
 
 .weather-details i{
     font-size: 36px;
+    color: #24b5ee;
 }
 
 .weather-details .text{
@@ -126,4 +122,22 @@ body{
 .text span{
     font-size: 20px;
     font-weight: 700;
+}
+
+.location-not-found{
+    margin-top: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.location-not-found h1{
+    font-size: 20px;
+    color: #6b6b6b;
+    margin-block-start: 15px;
+}
+
+.location-not-found img{
+    width: 80%;
 }

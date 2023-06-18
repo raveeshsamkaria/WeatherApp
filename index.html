@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
+        <!-- Search City -->
         <div class="header">
             <div class="search-box">
                 <input type="text" placeholder="Enter your Location" class="input-box">
                 <button class="fa-solid fa-magnifying-glass" id="searchBtn"></button>
             </div>
         </div>
-        <div class="location-not-found">
-            
+        <!-- Location not Found -->
+        <div class="location-not-found">            
             <img src="images/404.png" alt="Error">
             <h1>Sorry, Location Not Found !!!</h1>
         </div>
+        <!-- Weather Body -->
         <div class="weather-body">
             <img src="images/cloud.png" alt="Weather Image" class="weather-img">
             <div class="weather-box">
@@ -46,8 +52,9 @@
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    
+    <!-- JavaScript  -->
+    <script src="script.js" type="module"></script>
     <script src="https://kit.fontawesome.com/595a890311.js" crossorigin="anonymous"></script>
 </body>
 </html>

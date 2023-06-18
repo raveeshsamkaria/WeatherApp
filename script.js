@@ -1,3 +1,7 @@
+// Import the API key
+import { api_key } from './config.js';
+
+// Variable Declaration
 const inputBox = document.querySelector('.input-box');
 const searchBtn = document.getElementById('searchBtn');
 const weather_img = document.querySelector('.weather-img');
@@ -8,27 +12,29 @@ const wind_speed = document.getElementById('wind-speed');
 const location_not_found = document.querySelector('.location-not-found');
 const weather_body = document.querySelector('.weather-body');
 
+// Function Declaration
 async function checkWeather(city){
-    const api_key = "d0221547573a39700be2b673035ab836";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
 
     const weather_data = await fetch(`${url}`).then(response => response.json());
 
+    // Showing Error 404
     if(weather_data.cod === `404`){
         location_not_found.style.display = "flex";
         weather_body.style.display = "none";
-        console.log("error");
         return;
     }
 
+    // Hiding Error 404
     location_not_found.style.display = "none";
     weather_body.style.display = "flex";
-    temperature.innerHTML = `${Math.round(weather_data.main.temp - 273.15)}°C`;
-    description.innerHTML = `${weather_data.weather[0].description}`;
-    humidity.innerHTML = `${weather_data.main.humidity}%`;
-    wind_speed.innerHTML = `${weather_data.wind.speed}Km/H`;
 
+    temperature.innerHTML = `${Math.round(weather_data.main.temp - 273.15)}°C`; // Displaying Temperature
+    description.innerHTML = `${weather_data.weather[0].description}`; // Displaying Description
+    humidity.innerHTML = `${weather_data.main.humidity}%`; // Displaying Humidity
+    wind_speed.innerHTML = `${weather_data.wind.speed}Km/H`; // Displaying Wind_ Speed
 
+    // Checking the weather condition
     switch(weather_data.weather[0].main){
         case 'Clear':
             weather_img.src = "images/sun.gif";
@@ -58,10 +64,9 @@ async function checkWeather(city){
             weather_img.src = "images/mist.gif";
             break;        
     }
-
-    console.log(weather_data);
 }
 
+// Calling checkWeather Function
 searchBtn.addEventListener('click', ()=>{
     checkWeather(inputBox.value);
 })

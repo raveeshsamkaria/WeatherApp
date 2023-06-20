@@ -24,6 +24,14 @@ body{
     padding: 28px;
 }
 
+img{
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-block-end: 8px;
+}
+
 .search-box{
     width: 100%;
     height: min-content;
@@ -43,7 +51,7 @@ body{
 }
 
 .search-box input::placeholder{
-    color: #000;
+    color: #4e4d4d;
 }
 
 .search-box button{
@@ -65,7 +73,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-block: 20px;
+    margin-block: 2px;
 }
 
 .weather-body img{
@@ -73,7 +81,7 @@ body{
 }
 
 .weather-box{
-    margin-block: 20px;
+    margin-block: 10px;
     text-align: center;
 }
 
